@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+    <aside>
+        <img src="{% static 'main/img/logo_simple.png' %}" alt="">
+        <span class="logo">Peshok</span>
+        <h3>Навигация</h3>
+        <ul>
+            <a href="{% url 'home' %}"><li><img src="{% static 'main/img/home.png' %}" alt="">Главная</li></a>
+              <a href="{% url 'news_home' %}"><li><img src="{% static 'main/img/news.png' %}" alt="">Статьи</li></a>
+              <a href="{% url 'create' %}"><li><img src="{% static 'main/img/newspaper-folded.png' %}" alt="">Написать статью</li></a>
+            <a href="{% url 'about' %}"><li><img src="{% static 'main/img/id-card.png' %}" alt="">Про меня</li></a>
+            <a href="{% url 'contacts' %}"><li><img src="{% static 'main/img/contact-mail.png' %}" alt="">Контакты</li></a>
+        </ul>
+    </aside>
+
+    <main>
+        {% block content %}
+    
+        {% endblock %} 
+    </main>
+</body>
+</html>
